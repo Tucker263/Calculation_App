@@ -31,18 +31,17 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>   
 <body>
-        
 <div id="calculator">
 
-    <div class="bg-secondary vh-100 d-flex flex-column justify-content-center align-items-center pt-5">
-        <div class="col-9 col-sm-6 col-md-6 col-lg-8 p-3 bg-black rounded">
-            <div class="col-12">
-                <div class="text-white pt-2 pb-2 d-flex justify-content-end">
-                    <div>{{ displayExpress }}</div>
+    <div class="bg-secondary vh-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-8 p-1 pb-2 bg-black rounded">
+            <div class="d-flex justify-content-center pb-2">
+                <div class="col-10 col-sm-9 col-md-10 col-lg-11 d-flex justify-content-end">
+                    <div class="fontSize-2rem text-white">{{ displayExpress }}</div>
                 </div>
             </div>
 
-            <div class="mt-4 d-flex align-items-center">
+            <div class="d-flex align-items-center">
                 <!-- 関数ボタン -->
                 <div class="d-none d-lg-block col-lg-6">
                     <div class="d-flex flex-wrap">
@@ -64,40 +63,169 @@
                         <button class="col-3 bg-dark text-white" v-on:click="calculateExceptBasic(`tanh`)">tanh</button>
                     </div>
                 </div>
-                <!-- ボタンエリア2 -->
-                <div class="d-flex flex-wrap col-12 col-lg-6">
-                    <button class="col-3" v-on:click="resetExpress()">C</button>
-                    <button class="col-3" v-on:click="calculateExceptBasic(`+/-`)">+/-</button>
-                    <button class="col-3" v-on:click="calculateExceptBasic(`%`)">%</button>
-                    <button class="col-3 bg-orenge text-white rounded-pill" v-on:click="addToExpress(`÷`)">÷</button>
-                    <button class="col-3" v-on:click="addToExpress('7')">7</button>
-                    <button class="col-3" v-on:click="addToExpress('8')">8</button>
-                    <button class="col-3" v-on:click="addToExpress('9')">9</button>
-                    <button class="col-3 bg-orenge text-white rounded-pill" v-on:click="addToExpress(`×`)">×</button>
-                    <button class="col-3" v-on:click="addToExpress('4')">4</button>
-                    <button class="col-3" v-on:click="addToExpress('5')">5</button>
-                    <button class="col-3" v-on:click="addToExpress('6')">6</button>
-                    <button class="col-3 bg-orenge text-white rounded-pill" v-on:click="addToExpress(`-`)">-</button>
-                    <button class="col-3" v-on:click="addToExpress('1')">1</button>
-                    <button class="col-3" v-on:click="addToExpress('2')">2</button>
-                    <button class="col-3" v-on:click="addToExpress('3')">3</button>
-                    <button class="col-3 bg-orenge text-white rounded-pill" v-on:click="addToExpress(`+`)">+</button>
-                    <button class="col-6 bg-gray text-white rounded-pill mt-2" v-on:click="addToExpress('0')">0</button>
-                    <button class="col-3 bg-gray text-white rounded-pill mt-2" v-on:click="addToExpress('.')">.</button>
-                    <button class="col-3 bg-orenge text-white rounded-pill mt-2" v-on:click="calculate()">=</button>
-                </div>
 
-                <!-- 実験 -->
-                <!--<div class="d-flex flex-column justify-content-center align-items-center buttonA p-5">
-                <div class="text-white">=</div>
-                </div>-->
+                <!-- 標準ボタンエリア -->
+                <div class="d-flex flex-wrap col-12 col-lg-6">
+                    <!-- 1列目 -->
+                    <div class="col-12 d-flex">
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-dark circle pt-2" v-on:click="resetExpress()">
+                                    <div class="text-white text-center">C</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-dark circle pt-2" v-on:click="calculateExceptBasic('+/-')">
+                                    <div class="text-white text-center">+/-</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-dark circle pt-2" v-on:click="calculateExceptBasic('%')">
+                                    <div class="text-white text-center">%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-orenge circle pt-2" v-on:click="addToExpress('÷')">
+                                    <div class="text-white text-center">÷</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2列目 -->
+                    <div class="col-12 d-flex">
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('7')">
+                                    <div class="text-white text-center">7</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('8')">
+                                    <div class="text-white text-center">8</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('9')">
+                                    <div class="text-white text-center">9</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-orenge circle pt-2" v-on:click="addToExpress('×')">
+                                    <div class="text-white text-center">×</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3列目 -->
+                    <div class="col-12 d-flex">
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('4')">
+                                    <div class="text-white text-center">4</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('5')">
+                                    <div class="text-white text-center">5</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('6')">
+                                    <div class="text-white text-center">6</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-orenge circle pt-2" v-on:click="addToExpress('-')">
+                                    <div class="text-white text-center">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             
+                    <!-- 4列目 -->
+                    <div class="col-12 d-flex">
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('1')">
+                                    <div class="text-white text-center">1</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('2')">
+                                    <div class="text-white text-center">2</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('3')">
+                                    <div class="text-white text-center">3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-orenge circle pt-2" v-on:click="addToExpress('+')">
+                                    <div class="text-white text-center">+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5列目 -->
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            <div class="rectangle d-flex justify-content-center">
+                                <div class="bg-gray ellipse pt-2" v-on:click="addToExpress('0')">
+                                    <div class="text-white text-center">0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('.')">
+                                    <div class="text-white text-center">.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="square d-flex justify-content-center">
+                                <div class="bg-orenge circle pt-2" v-on:click="calculate()">
+                                    <div class="text-white text-center">=</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>           
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="main.js"></script>
 </div>
 
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

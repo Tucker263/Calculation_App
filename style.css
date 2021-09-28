@@ -1,7 +1,3 @@
-.tempBorder{
-    border: solid 3px black;
-}
-
 .bg-black{
     background-color: black;
 }
@@ -14,10 +10,28 @@
     background-color: gray;
 }
 
-.buttonA{
-    background-color: orange;
+.circle{
     border-radius: 100%;
-    height: 100px;
-    width: 100px;
-    
+    height: 50px;
+    width: 50px;
+}
+
+.ellipse{
+    border-radius: 20px;
+    height: 50px;
+    width: 110px;
+}
+
+.square{
+    height: 60px;
+    width:  60px;
+}
+
+.rectangle{
+    height: 60px;
+    width: 120px;
+}
+
+.fontSize-2rem{
+    font-size: 2rem;
 }
