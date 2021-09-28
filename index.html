@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <!-- Vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>   
+<body>
+        
+<div id="calculator">
+
+    <div class="d-flex flex-column justify-content-center align-items-center pt-5">
+        <div class="tempBorder col-9 col-sm-6 col-md-6 col-lg-8 p-3">
+            <div class="col-12">
+                <div class="tempBorder pt-2 pb-2 d-flex justify-content-end">
+                    <div>{{ displayExpress }}</div>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex align-items-center">
+                <!-- 関数ボタン -->
+                <div class="d-none d-lg-block col-lg-6">
+                    <div class="d-flex flex-wrap">
+                        <button class="col-3" v-on:click="calculateExceptBasic(`squared`)">x<sup>2</sup></button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`cubed`)">x<sup>3</sup></button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`PowerE`)">e<sup>x</sup></button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`Power10`)">10<sup>x</sup></button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`ln`)">ln</button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`sin`)">sin</button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`cos`)">cos</button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`tan`)">tan</button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`log10`)">log10</button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`asin`)">sin<sup>-1</sup></button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`acos`)">cos<sup>-1</sup></button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`atan`)">tan<sup>-1</sup></button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`x!`)">x!</button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`sinh`)">sinh</button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`cosh`)">cosh</button>
+                        <button class="col-3" v-on:click="calculateExceptBasic(`tanh`)">tanh</button>
+                    </div>
+                </div>
+                <!-- ボタンエリア2 -->
+                <div class="d-flex flex-wrap col-12 col-lg-6">
+                    <button class="col-3" v-on:click="resetExpress()">C</button>
+                    <button class="col-3" v-on:click="calculateExceptBasic(`+/-`)">+/-</button>
+                    <button class="col-3" v-on:click="calculateExceptBasic(`%`)">%</button>
+                    <button class="col-3" v-on:click="addToExpress(`÷`)">÷</button>
+                    <button class="col-3" v-on:click="addToExpress('7')">7</button>
+                    <button class="col-3" v-on:click="addToExpress('8')">8</button>
+                    <button class="col-3" v-on:click="addToExpress('9')">9</button>
+                    <button class="col-3" v-on:click="addToExpress(`×`)">×</button>
+                    <button class="col-3" v-on:click="addToExpress('4')">4</button>
+                    <button class="col-3" v-on:click="addToExpress('5')">5</button>
+                    <button class="col-3" v-on:click="addToExpress('6')">6</button>
+                    <button class="col-3" v-on:click="addToExpress(`-`)">-</button>
+                    <button class="col-3" v-on:click="addToExpress('1')">1</button>
+                    <button class="col-3" v-on:click="addToExpress('2')">2</button>
+                    <button class="col-3" v-on:click="addToExpress('3')">3</button>
+                    <button class="col-3" v-on:click="addToExpress(`+`)">+</button>
+                    <button class="col-6" v-on:click="addToExpress('0')">0</button>
+                    <button class="col-3" v-on:click="addToExpress('.')">.</button>
+                    <button class="col-3" v-on:click="calculate()">=</button>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+@startuml
+'MVVM(Model, View, ViewModel)パターン
+
+'---------Modelの設計---------
+class config{
+    + static final String[] buttomNameArr
+}
+
+class Calculation{
+    - String express
+
+    + Calculation()
+    + setExpress(express: String)
+    + getExpress(): String
+    + isVallidExpress(): boolean
+    + calculate(): int
+}
+
+
+'---------ViewModelの設計---------
+'VueインスタンスはViewModelそのもの
+'状態はVueのdataプロパティとする
+'それ以外はVueのComputedやmethodとする
+class VueCal{
+    - String[] buttomNameArr
+    - Calculation calculation
+
+    + methodプロパティ():
+    + calculate(): void <--equalボタンが押された時に実行
+    + resetExpress(): void <--resetボタンを押した時にexpressを""にする
+}
+
+'各クラスの関係
+'コンポジション
+VueCal --* Calculation
+'関連
+VueCal ..> config
+
+@enduml
