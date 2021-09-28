@@ -37,7 +37,7 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-8 p-1 pb-2 bg-black rounded">
             <div class="d-flex justify-content-center pb-2">
                 <div class="col-10 col-sm-9 col-md-10 col-lg-11 d-flex justify-content-end">
-                    <div class="fontSize-2rem text-white">{{ displayExpress }}</div>
+                    <div class="fontSize-3rem text-white">{{ displayExpress }}</div>
                 </div>
             </div>
 
@@ -70,29 +70,29 @@
                     <div class="col-12 d-flex">
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-dark circle pt-2" v-on:click="resetExpress()">
-                                    <div class="text-white text-center">C</div>
+                                <div class="bg-dark circle pt-1" v-on:click="resetExpress()">
+                                    <div class="text-white text-center fontSize-1p5rem">C</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-dark circle pt-2" v-on:click="calculateExceptBasic('+/-')">
-                                    <div class="text-white text-center">+/-</div>
+                                <div class="bg-dark circle pt-1" v-on:click="calculateExceptBasic('+/-')">
+                                    <div class="text-white text-center fontSize-1p5rem">+/-</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-dark circle pt-2" v-on:click="calculateExceptBasic('%')">
-                                    <div class="text-white text-center">%</div>
+                                <div class="bg-dark circle pt-1" v-on:click="calculateExceptBasic('%')">
+                                    <div class="text-white text-center fontSize-1p5rem">%</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-orenge circle pt-2" v-on:click="addToExpress('÷')">
-                                    <div class="text-white text-center">÷</div>
+                                <div class="bg-orenge circle" v-on:click="addToExpress('÷')">
+                                    <div class="text-white text-center fontSize-1p75rem">÷</div>
                                 </div>
                             </div>
                         </div>
@@ -102,29 +102,29 @@
                     <div class="col-12 d-flex">
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('7')">
-                                    <div class="text-white text-center">7</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('7')">
+                                    <div class="text-white text-center fontSize-1p5rem">7</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('8')">
-                                    <div class="text-white text-center">8</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('8')">
+                                    <div class="text-white text-center fontSize-1p5rem">8</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('9')">
-                                    <div class="text-white text-center">9</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('9')">
+                                    <div class="text-white text-center fontSize-1p5rem">9</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-orenge circle pt-2" v-on:click="addToExpress('×')">
-                                    <div class="text-white text-center">×</div>
+                                <div class="bg-orenge circle" v-on:click="addToExpress('×')">
+                                    <div class="text-white text-center fontSize-1p75rem">×</div>
                                 </div>
                             </div>
                         </div>
@@ -134,29 +134,29 @@
                     <div class="col-12 d-flex">
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('4')">
-                                    <div class="text-white text-center">4</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('4')">
+                                    <div class="text-white text-center fontSize-1p5rem">4</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('5')">
-                                    <div class="text-white text-center">5</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('5')">
+                                    <div class="text-white text-center fontSize-1p5rem">5</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('6')">
-                                    <div class="text-white text-center">6</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('6')">
+                                    <div class="text-white text-center fontSize-1p5rem">6</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-orenge circle pt-2" v-on:click="addToExpress('-')">
-                                    <div class="text-white text-center">-</div>
+                                <div class="bg-orenge circle" v-on:click="addToExpress('-')">
+                                    <div class="text-white text-center fontSize-1p75rem">-</div>
                                 </div>
                             </div>
                         </div>
@@ -166,29 +166,29 @@
                     <div class="col-12 d-flex">
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('1')">
-                                    <div class="text-white text-center">1</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('1')">
+                                    <div class="text-white text-center fontSize-1p5rem">1</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('2')">
-                                    <div class="text-white text-center">2</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('2')">
+                                    <div class="text-white text-center fontSize-1p5rem">2</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('3')">
-                                    <div class="text-white text-center">3</div>
+                                <div class="bg-gray circle pt-1" v-on:click="addToExpress('3')">
+                                    <div class="text-white text-center fontSize-1p5rem">3</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-orenge circle pt-2" v-on:click="addToExpress('+')">
-                                    <div class="text-white text-center">+</div>
+                                <div class="bg-orenge circle" v-on:click="addToExpress('+')">
+                                    <div class="text-white text-center fontSize-1p75rem">+</div>
                                 </div>
                             </div>
                         </div>
@@ -198,32 +198,34 @@
                     <div class="col-12 d-flex">
                         <div class="col-6">
                             <div class="rectangle d-flex justify-content-center">
-                                <div class="bg-gray ellipse pt-2" v-on:click="addToExpress('0')">
-                                    <div class="text-white text-center">0</div>
+                                <div class="bg-gray ellipse pl-3 pt-1" v-on:click="addToExpress('0')">
+                                    <div class="text-white fontSize-1p5rem">0</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-gray circle pt-2" v-on:click="addToExpress('.')">
-                                    <div class="text-white text-center">.</div>
+                                <div class="bg-gray circle" v-on:click="addToExpress('.')">
+                                    <div class="text-white text-center fontSize-1p75rem">.</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="square d-flex justify-content-center">
-                                <div class="bg-orenge circle pt-2" v-on:click="calculate()">
-                                    <div class="text-white text-center">=</div>
+                                <div class="bg-orenge circle" v-on:click="calculate()">
+                                    <div class="text-white text-center fontSize-1p75rem">=</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                </div>           
+                </div>
+            
             </div>
+
         </div>
     </div>
-
+  
 </div>
 
     <script type="text/javascript" src="main.js"></script>
