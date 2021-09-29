@@ -100,8 +100,15 @@ var vmCalculator = new Vue({
 
         setExpress: function(express){
             this.express = String(express);
-            //指数表記やInfinityが含まれる時、初期状態にリセット
-            if(this.express.indexOf("e") !== -1 || isNaN(express) || this.express === "Infinity") this.resetExpress();
+            //指数表記など
+            if(this.express.indexOf("e") !== -1 || this.express === "Infinity"){
+                this.resetExpress();
+                alert("桁数が多いため、計算できません。");
+            }
+            if(isNaN(express)){
+                this.resetExpress();
+                alert("不正な値です。");
+            }
         },
 
         factorialize: function(n){
