@@ -20,6 +20,14 @@
 <div id="calculator">
 
     <div class="bg-secondary vh-100 d-flex flex-column justify-content-center align-items-center">
+        <!-- タイトル -->
+        <div class="d-none d-sm-block">
+            <div class="d-flex justify-content-center col-12">
+                <div class="fontSize-3rem text-white">Calculation App</div>
+            </div>
+        </div>
+        
+        <!-- 電卓 -->
         <div class="col-12 col-sm-8 col-md-6 col-lg-8 p-1 pb-2 bg-black rounded text-white">
             <div class="d-flex justify-content-center pb-2 col-12">
                 <div class="d-flex justify-content-end col-12">
@@ -28,7 +36,7 @@
             </div>
 
             <div class="d-flex align-items-center">
-                <!-- 関数ボタンエリア -->
+                <!-- 関数ボタン -->
                 <div class="d-none d-lg-block col-lg-6">
                     <div class="d-flex flex-column">
                         <!-- 1列目 -->
@@ -98,7 +106,7 @@
                     </div>
                 </div>
 
-                <!-- 標準ボタンエリア -->
+                <!-- 標準ボタン -->
                 <div class="d-flex flex-column col-12 col-lg-6">
                     <!-- 1列目 -->
                     <div class="d-flex justify-content-between align-items-center pb-2">
@@ -166,11 +174,15 @@
 
                     <!-- 5列目 -->
                     <div class="d-flex justify-content-between align-items-center pb-2">
-                        <div class="bg-gray ellipse-double pl-3 pt-1" v-on:click="addToExpress('0')">
+                        <div class="bg-gray circle pl-3 pt-1" v-on:click="addToExpress('0')">
                             <div class="fontSize-1p5rem">0</div>
                         </div>
                         <div class="bg-gray circle" v-on:click="addToExpress('.')">
                             <div class="text-center fontSize-1p75rem">.</div>
+                        </div>
+                        <!-- ダミーボタン -->
+                        <div class="circle">
+                            <div class="text-center fontSize-1p5rem"></div>
                         </div>
                         <div class="bg-orenge circle" v-on:click="calculate()">
                             <div class="text-center fontSize-1p75rem">=</div>
