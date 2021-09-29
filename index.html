@@ -20,78 +20,78 @@
 <div id="calculator">
 
     <div class="bg-secondary vh-100 d-flex flex-column justify-content-center align-items-center">
-        <div class="col-12 col-sm-8 col-md-6 col-lg-8 p-1 pb-2 bg-black rounded">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-8 p-1 pb-2 bg-black rounded text-white">
             <div class="d-flex justify-content-center pb-2 col-12">
                 <div class="d-flex justify-content-end col-12">
-                    <div class="fontSize-3rem text-white">{{ displayExpress }}</div>
+                    <div class="fontSize-3rem">{{ displayExpress }}</div>
                 </div>
             </div>
 
-            <div class="d-flex align-items-center border">
-                <!-- 関数ボタン -->
+            <div class="d-flex align-items-center">
+                <!-- 関数ボタンエリア -->
                 <div class="d-none d-lg-block col-lg-6">
                     <div class="d-flex flex-column">
                         <!-- 1列目 -->
-                        <div class="d-flex justify-content-between align-items-center pb-2 border">
+                        <div class="d-flex justify-content-between align-items-center pb-2">
                             <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic(`squared`)">
-                                <div class="text-white text-center fontSize-1p5rem">x<sup>2</sup></div>
+                                <div class="text-center fontSize-1p25rem">x<sup>2</sup></div>
                             </div>
                             <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic('cubed')">
-                                <div class="text-white text-center fontSize-1p5rem">x<sup>3</sup></div>
+                                <div class="text-center fontSize-1p25rem">x<sup>3</sup></div>
                             </div>
                             <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic('PowerE')">
-                                <div class="text-white text-center fontSize-1p5rem">e<sup>x</sup></div>
+                                <div class="text-center fontSize-1p25rem">e<sup>x</sup></div>
                             </div>
                             <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic('Power10')">
-                                <div class="text-white text-center fontSize-1p5rem">10<sup>x</sup></div>
+                                <div class="text-center fontSize-1p25rem">10<sup>x</sup></div>
                             </div>
                         </div>
 
                         <!-- 2列目 -->
-                        <div class="d-flex justify-content-between align-items-center pb-2 border">
+                        <div class="d-flex justify-content-between align-items-center pb-2">
                             <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic(`ln`)">
-                                <div class="text-white text-center fontSize-1p5rem">ln</div>
+                                <div class="text-center fontSize-1p25rem">ln</div>
                             </div>
-                            <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('sin')">
-                                <div class="text-white text-center fontSize-1p25rem">sin</div>
+                            <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic('sin')">
+                                <div class="text-center fontSize-1p25rem">sin</div>
                             </div>
-                            <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('cos')">
-                                <div class="text-white text-center fontSize-1p25rem">cos</div>
+                            <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic('cos')">
+                                <div class="text-center fontSize-1p25rem">cos</div>
                             </div>
-                            <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('tan')">
-                                <div class="text-white text-center fontSize-1p25rem">tan</div>
+                            <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic('tan')">
+                                <div class="text-center fontSize-1p25rem">tan</div>
                             </div>
                         </div>
 
                         <!-- 3列目 -->
-                        <div class="d-flex justify-content-between align-items-center pb-2 border">
+                        <div class="d-flex justify-content-between align-items-center pb-2">
                             <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic(`log10`)">
-                                <div class="text-white text-center">log10</div>
+                                <div class="text-center">log10</div>
                             </div>
                             <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('asin')">
-                                <div class="text-white text-center fontSize-1p25rem">sin<sup>-1</sup></div>
+                                <div class="text-center fontSize-1p25rem">sin<sup>-1</sup></div>
                             </div>
                             <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('acos')">
-                                <div class="text-white text-center fontSize-1p25rem">cos<sup>-1</sup></div>
+                                <div class="text-center fontSize-1p25rem">cos<sup>-1</sup></div>
                             </div>
                             <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('atan')">
-                                <div class="text-white text-center fontSize-1p25rem">tan<sup>-1</sup></div>
+                                <div class="text-center fontSize-1p25rem">tan<sup>-1</sup></div>
                             </div>
                         </div>
 
                         <!-- 4列目 -->
-                        <div class="d-flex justify-content-between align-items-center pb-2 border">
+                        <div class="d-flex justify-content-between align-items-center pb-2">
                             <div class="bg-dark ellipse pt-1" v-on:click="calculateExceptBasic(`x!`)">
-                                <div class="text-white text-center fontSize-1p5rem">x!</div>
+                                <div class="text-center fontSize-1p25rem">x!</div>
                             </div>
                             <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('sinh')">
-                                <div class="text-white text-center fontSize-1p25rem">sinh</div>
+                                <div class="text-center fontSize-1p25rem">sinh</div>
                             </div>
                             <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('cosh')">
-                                <div class="text-white text-center fontSize-1p25rem">cosh</div>
+                                <div class="text-center fontSize-1p25rem">cosh</div>
                             </div>
                             <div class="bg-dark ellipse pt-2" v-on:click="calculateExceptBasic('tanh')">
-                                <div class="text-white text-center fontSize-1p25rem">tanh</div>
+                                <div class="text-center fontSize-1p25rem">tanh</div>
                             </div>
                         </div>
                         <!-- 4列目終了 -->
@@ -103,77 +103,77 @@
                     <!-- 1列目 -->
                     <div class="d-flex justify-content-between align-items-center pb-2">
                         <div class="bg-dark circle pt-1" v-on:click="resetExpress()">
-                            <div class="text-white text-center fontSize-1p5rem">C</div>
+                            <div class="text-center fontSize-1p5rem">C</div>
                         </div>
                         <div class="bg-dark circle pt-1" v-on:click="calculateExceptBasic('+/-')">
-                            <div class="text-white text-center fontSize-1p5rem">+/-</div>
+                            <div class="text-center fontSize-1p5rem">+/-</div>
                         </div>
                         <div class="bg-dark circle pt-1" v-on:click="calculateExceptBasic('%')">
-                            <div class="text-white text-center fontSize-1p5rem">%</div>
+                            <div class="text-center fontSize-1p5rem">%</div>
                         </div>
                         <div class="bg-orenge circle" v-on:click="addToExpress('÷')">
-                            <div class="text-white text-center fontSize-1p75rem">÷</div>
+                            <div class="text-center fontSize-1p75rem">÷</div>
                         </div>
                     </div>
 
                     <!-- 2列目 -->
                     <div class="d-flex justify-content-between align-items-center pb-2">
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('7')">
-                            <div class="text-white text-center fontSize-1p5rem">7</div>
+                            <div class="text-center fontSize-1p5rem">7</div>
                         </div>
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('8')">
-                            <div class="text-white text-center fontSize-1p5rem">8</div>
+                            <div class="text-center fontSize-1p5rem">8</div>
                         </div>
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('9')">
-                            <div class="text-white text-center fontSize-1p5rem">9</div>
+                            <div class="text-center fontSize-1p5rem">9</div>
                         </div>
                         <div class="bg-orenge circle" v-on:click="addToExpress('×')">
-                            <div class="text-white text-center fontSize-1p75rem">×</div>
+                            <div class="text-center fontSize-1p75rem">×</div>
                         </div>
                     </div>
 
                     <!-- 3列目 -->
                     <div class="d-flex justify-content-between align-items-center pb-2">
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('4')">
-                            <div class="text-white text-center fontSize-1p5rem">4</div>
+                            <div class="text-center fontSize-1p5rem">4</div>
                         </div>
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('5')">
-                            <div class="text-white text-center fontSize-1p5rem">5</div>
+                            <div class="text-center fontSize-1p5rem">5</div>
                         </div>
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('6')">
-                            <div class="text-white text-center fontSize-1p5rem">6</div>
+                            <div class="text-center fontSize-1p5rem">6</div>
                         </div>
                         <div class="bg-orenge circle" v-on:click="addToExpress('-')">
-                            <div class="text-white text-center fontSize-1p75rem">-</div>
+                            <div class="text-center fontSize-1p75rem">-</div>
                         </div>
                     </div>
             
                     <!-- 4列目 -->
                     <div class="d-flex justify-content-between align-items-center pb-2 border">
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('1')">
-                            <div class="text-white text-center fontSize-1p5rem">1</div>
+                            <div class="text-center fontSize-1p5rem">1</div>
                         </div>
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('2')">
-                            <div class="text-white text-center fontSize-1p5rem">2</div>
+                            <div class="text-center fontSize-1p5rem">2</div>
                         </div>
                         <div class="bg-gray circle pt-1" v-on:click="addToExpress('3')">
-                            <div class="text-white text-center fontSize-1p5rem">3</div>
+                            <div class="text-center fontSize-1p5rem">3</div>
                         </div>
                         <div class="bg-orenge circle" v-on:click="addToExpress('+')">
-                            <div class="text-white text-center fontSize-1p75rem">+</div>
+                            <div class="text-center fontSize-1p75rem">+</div>
                         </div>
                     </div>
 
                     <!-- 5列目 -->
                     <div class="d-flex justify-content-between align-items-center pb-2 border">
-                        <div class="bg-gray ellipse pl-3 pt-1" v-on:click="addToExpress('0')">
-                            <div class="text-white fontSize-1p5rem">0</div>
+                        <div class="bg-gray ellipse-double pl-3 pt-1" v-on:click="addToExpress('0')">
+                            <div class="fontSize-1p5rem">0</div>
                         </div>
                         <div class="bg-gray circle" v-on:click="addToExpress('.')">
-                            <div class="text-white text-center fontSize-1p75rem">.</div>
+                            <div class="text-center fontSize-1p75rem">.</div>
                         </div>
                         <div class="bg-orenge circle" v-on:click="calculate()">
-                            <div class="text-white text-center fontSize-1p75rem">=</div>
+                            <div class="text-center fontSize-1p75rem">=</div>
                         </div>
                     </div>
                     <!-- 5列目終了 -->
@@ -183,6 +183,7 @@
 
         </div>
     </div>
+
   
 </div>
 
