@@ -41,6 +41,17 @@
     font-size: 3rem;
 }
 
+/* スクロール */
+.scroll-widthAuto{
+    overflow: auto;
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+}
+
+.scroll-widthAuto::-webkit-scrollbar {
+    display:none;   /* Chrome, Safari 対応 */
+}
+
 /* ホバー */
 .circle:hover {
     opacity: 0.75;
