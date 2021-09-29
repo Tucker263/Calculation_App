@@ -15,7 +15,10 @@ var vmCalculator = new Vue({
     },
     methods: {
         calculate: function(){
-            if(this.isTailNumber()) return;
+            if(this.isTailNumber()){
+                alert("この式は計算できません。");
+                return;
+            }
             if(this.express.charAt(0) === '-') this.express = "0" + this.express;
 
             let nums = [];
@@ -43,20 +46,21 @@ var vmCalculator = new Vue({
 
             while(ops.length > 0) this.process(nums, ops.pop());
 
-            this.express = String(nums.pop());
-            //指数表記が含まれる時、初期状態にリセット
-            if(this.express.indexOf("e") !== -1) this.resetExpress();
+            this.setExpress(String(nums.pop()));
         },
 
-        calculateExceptBasic: function(op){//calculateFunction
+        calculateFunction: function(op){
             let number = Number(this.express);
-            if(isNaN(number) || this.express.length === 0) return;
+            if(isNaN(number) || this.express.length === 0){
+                alert("計算できません。");
+                return;
+            }
 
             switch(op){
                 case '%':
                     number /= 100; break;
                 case "+/-":
-                    number = number > 0 ? (-number) : Math.abs(number); break;
+                    number = (-number); break;
                 case "squared":
                     number = Math.pow(number, 2); break;
                 case "cubed":
@@ -91,9 +95,13 @@ var vmCalculator = new Vue({
                     number = Math.tanh(number); break;
             }
 
-            this.express = String(number);
+            this.setExpress(number);
+        },
+
+        setExpress: function(express){
+            this.express = String(express);
             //指数表記やInfinityが含まれる時、初期状態にリセット
-            if(this.express.indexOf("e") !== -1 || isNaN(number) || this.express === "Infinity") this.resetExpress();
+            if(this.express.indexOf("e") !== -1 || isNaN(express) || this.express === "Infinity") this.resetExpress();
         },
 
         factorialize: function(n){
@@ -139,7 +147,10 @@ var vmCalculator = new Vue({
         },
 
         addToExpress: function(char){
-            if(!this.canAddToExpress(char)) return;
+            if(!this.canAddToExpress(char)) {
+                alert("式に追加できません。");
+                return;
+            }
 
             this.express = this.isInitExpress() ? char : this.express + char;
         },
